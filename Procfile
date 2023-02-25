@@ -1,1 +1,0 @@
-web: gunicorn Ramazon.wsgi --log-file -
