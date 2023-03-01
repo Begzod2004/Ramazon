@@ -21,7 +21,7 @@ class HududRetrieveAPIView(generics.RetrieveAPIView):
 class HududList(generics.ListCreateAPIView):
     queryset = Hududlar.objects.all()
     serializer_class = HududSerializer
-    permission_classes = [IsAdminUser]
+    # permission_classes = [IsAdminUser]
     parser_classes = (FormParser, MultiPartParser)
 
 
