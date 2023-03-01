@@ -67,8 +67,8 @@ class HududlarVaqt(APIView):
             queryset = Vaqt.objects.filter(hudud=hudud).order_by("sana").values()
             data = list(queryset)
             for i in data:
-                i["hudud"] = Hududlar.objects.get(id=hudud).nomi
-                i.pop("id")
+                i["hudud"] = Hududlar.objects.get(hudud_id=hudud).nomi
+                i.pop("hudud_id")
             return JsonResponse({"data:": data})
         except Exception as e:
             return JsonResponse({"error": str(e)}, status=400)
