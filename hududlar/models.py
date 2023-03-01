@@ -1,6 +1,7 @@
 from django.db import models
 
 class Hududlar(models.Model):
+    hudud_id = models.IntegerField()
     nomi = models.CharField(max_length=30)
     vaqt_farqi = models.IntegerField(default=0)
 

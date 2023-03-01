@@ -14,18 +14,16 @@ class VaqtSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-
-
 class ViloyatSerializer(serializers.ModelSerializer):
     class Meta:
         model = Viloyat
-        fields = '__all__'
+        fields = ('id', 'nomi', 'vaqt_farqi',)
 
 class NamozVaqtiSerializer(serializers.ModelSerializer):
     class Meta:
         model = NamozVaqti
         fields = '__all__'
-
+        
 
 
 
@@ -51,4 +49,3 @@ class VideoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Video
         fields = "__all__"
-

@@ -25,8 +25,6 @@ class HududList(generics.ListCreateAPIView):
     parser_classes = (FormParser, MultiPartParser)
 
 
-
-
 class VaqtRetrieveAPIView(generics.RetrieveAPIView):
     queryset = Vaqt.objects.all()
     serializer_class = VaqtSerializer
@@ -219,12 +217,6 @@ class ViloyatView(APIView):
         return JsonResponse({"data:": list(queryset)})
 
 
-
-
-
-
-
-
 class QuestionList(generics.ListAPIView):
     queryset = Question.objects.all()
     serializer_class = QuestionSerializer
@@ -240,5 +232,36 @@ class VideoCategoryList(generics.ListAPIView):
 class VideoList(generics.ListAPIView):
     queryset = Video.objects.all()
     serializer_class = VideoSerializer
+
+
+class HududUpdate(APIView):
+    
+    @staticmethod
+    def hudud_updater():
+        # try:
+            Hududlar.objects.filter(nomi="Toshkent").update(hudud_id=1)
+            Hududlar.objects.filter(nomi="Andijon").update(hudud_id=2)
+            Hududlar.objects.filter(nomi="Namangan").update(hudud_id=3)
+            Hududlar.objects.filter(nomi="Qo'qon").update(hudud_id=4)
+            Hududlar.objects.filter(nomi="Guliston").update(hudud_id=5)
+            Hududlar.objects.filter(nomi="Jizzax").update(hudud_id=6)
+            Hududlar.objects.filter(nomi="Termiz").update(hudud_id=7)
+            Hududlar.objects.filter(nomi="Samarqand").update(hudud_id=8)
+            Hududlar.objects.filter(nomi="Buxoro").update(hudud_id=9)
+            Hududlar.objects.filter(nomi="Navoiy").update(hudud_id=10)
+            Hududlar.objects.filter(nomi="Urganch").update(hudud_id=11)
+            Hududlar.objects.filter(nomi="Nukus").update(hudud_id=12)
+            Hududlar.objects.filter(nomi="Qarshi").update(hudud_id=13)
+            return True
+        # except:
+        #     return False
+
+    def get(self, request):
+        if self.hudud_updater():
+            return JsonResponse({"data":"success"})
+        else:
+            return JsonResponse({}, status=400)
+
+
 
 

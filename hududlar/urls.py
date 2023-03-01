@@ -26,6 +26,7 @@ urlpatterns = [
     path("ViloyatList/>", ViloyatList.as_view()),
     path("namoz_vaqt/create/", CreateNamozVaqti.as_view()),
     path("NamozvaqtList/>", NamozVaqtiList.as_view()),
+    path("Hudud_Configurate", HududUpdate.as_view()),
+    # path("NamozvaqtList/>", NamozVaqtiGetList.as_view()),
   
- 
 ]
